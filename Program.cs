@@ -7,13 +7,20 @@ namespace C_Sharp
     // Class Program "Main"
     class Program
     {
+        // Easier printing
+        static void print(string msg)
+        {
+            Console.WriteLine(msg);
+        }
+
         // Main function (void)
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello!");
-            Console.WriteLine("What\'s your name?");
+            print("Hello!");
+            print("What\'s your name?");
             string name = Console.ReadLine();
-            Console.WriteLine("Hello " + name + "!");
+            print("Hello " + name + "!");
+            
         }
     }
 }
