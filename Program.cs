@@ -7,7 +7,9 @@ namespace C_Sharp
         static void Main(string[] args)
         {
             Console.WriteLine("Hello!");
-            Console.WriteLine("How are you?");
+            Console.WriteLine("What\'s your name?");
+            string name = Console.ReadLine();
+            Console.WriteLine("Hello " + name + "!");
         }
     }
 }
