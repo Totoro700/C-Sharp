@@ -8,39 +8,100 @@ namespace C_Sharp
     class Program
     {
         // Easier printing
-        void print(string msg)
+        static void print(string msg)
         {
             Console.WriteLine(msg);
         }
 
-        bool isYes(string character)
+        static bool isYes(string character)
         {
             return ("Y" == character || "y" == character);
         }
 
-        bool isNo(string character)
+        static bool isNo(string character)
         {
             return ("N" == character || "n" == character);
         }
 
-        void cls()
+        static void cls()
         {
             Console.Clear();
         }
-        void playGame()
+
+        // Setup
+        static void setup()
+        {
+            // Clear
+            cls();
+        }
+
+        // Play game
+        static void playGame()
         {
             // Play game
             print("");
-        }
 
-        // Setup
-        void setup()
-        {
+            // Declare variable
             int coins = 0;
+
+            // Instructions
+            print("You have " + coins + " coins to start with");
+            print("To get coins, you have to join two numbers");
+
+            // Declare variable (random)
+            var ran = new Random();
+
+            // Forever loop (null == null)
+            while (null == null)
+            {
+                // Declare variables
+                double numOne = ran.NextDouble() * 5;
+                double numTwo = ran.NextDouble() * 5;
+
+                // Final value as a string
+                // Combine (not add) the two random numbers
+                string finalValue = numOne.ToString() + numTwo.ToString();
+
+                // Declare user input variable as assign it to null
+                string userInput = null;
+
+                // Use Console.Write for only one line
+                Console.Write("Join ");
+
+                // Use Console.WriteLine because data type double can not be converted to string
+                Console.Write(numOne);
+
+                Console.Write(" and ");
+                Console.Write(numTwo);
+
+                // Add new line
+                print("");
+
+                // Get input
+                userInput = Console.ReadLine();
+
+                Console.WriteLine(numOne);
+                Console.WriteLine(numTwo);
+                Console.WriteLine(finalValue);
+
+                // Check if correct
+                if (userInput == finalValue)
+                {
+                    print("Correct!");
+                    coins++;
+                    print("You now have " + coins + " coin(s)!");
+                    print("-------------------------------------------------");
+                }
+                else
+                {
+                    print("Sorry, that was incorrect");
+                    print("-------------------------------------------------");
+                }
+            }
         }
 
         // Main function (void)
-        void Main(string[] args)
+        static void Main(string[] args)
         {
             // Setup
             setup();
@@ -51,7 +112,7 @@ namespace C_Sharp
             // Ask for name
             print("What's your name?");
 
-            // Create and store variable
+            // Declare and store variable
             string name = Console.ReadLine();
             print("Hello " + name + "!");
             print("How are you?");
@@ -103,6 +164,7 @@ namespace C_Sharp
             {
                 // Yes
                 print("Playing a game . . .");
+
                 // Play game
                 playGame();
             }
