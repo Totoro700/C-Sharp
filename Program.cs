@@ -8,35 +8,43 @@ namespace C_Sharp
     class Program
     {
         // Easier printing
-        static void print(string msg)
+        void print(string msg)
         {
             Console.WriteLine(msg);
         }
 
-        static bool isYes(string character)
+        bool isYes(string character)
         {
             return ("Y" == character || "y" == character);
         }
 
-        static bool isNo(string character)
+        bool isNo(string character)
         {
             return ("N" == character || "n" == character);
         }
 
-        static void playGame()
-        { 
-            // Play game
-        }
-
-        static void cls()
+        void cls()
         {
             Console.Clear();
         }
+        void playGame()
+        {
+            // Play game
+            print("");
+        }
 
+        // Setup
+        void setup()
+        {
+            int coins = 0;
+        }
 
         // Main function (void)
-        static void Main(string[] args)
+        void Main(string[] args)
         {
+            // Setup
+            setup();
+
             // Welcome
             print("Hello!");
 
@@ -68,36 +76,7 @@ namespace C_Sharp
             else if (a == "bad")
             {
                 // Bad
-                // Check if the user wants to play a game
-                print("Do you want to play a game? Y = Yes | N = No ");
-
-                // Create and store variable
-                string b = Console.ReadLine();
-
-                // Check
-                if (isNo(b))
-                {
-                    // No
-                    print("Okay, then");
-
-                    // Do something else
-                }
-                else if (isYes(b))
-                {
-                    // Yes
-                    print("Playing a game . . .");
-                    // Play game
-                    playGame();
-                }
-                else if (b == null)
-                {
-                    // Null
-                    print("We couldn't process process your answer!");
-                }
-                else 
-                {
-                    print("That is not a valid answer!");
-                }
+                print("We hope that tomorrow is a better day!");
             }
             else if (a == null)
             {
@@ -106,6 +85,35 @@ namespace C_Sharp
             else
             {
                 print("Hmm. I hope tommorow is a great day!");
+            }
+
+            // Check if the user wants to play a game
+            print("Do you want to play a game? Y = Yes | N = No ");
+
+            // Create and store variable
+            string b = Console.ReadLine();
+
+            // Check
+            if (isNo(b))
+            {
+                // No
+                print("Okay, no problem");
+            }
+            else if (isYes(b))
+            {
+                // Yes
+                print("Playing a game . . .");
+                // Play game
+                playGame();
+            }
+            else if (b == null)
+            {
+                // Null
+                print("We couldn't process process your answer!");
+            }
+            else
+            {
+                print("That is not a valid answer!");
             }
         }
     }
