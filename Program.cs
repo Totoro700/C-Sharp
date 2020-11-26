@@ -80,10 +80,6 @@ namespace C_Sharp
                 // Get input
                 userInput = Console.ReadLine();
 
-                Console.WriteLine(numOne);
-                Console.WriteLine(numTwo);
-                Console.WriteLine(finalValue);
-
                 // Check if correct
                 if (userInput == finalValue)
                 {
@@ -116,7 +112,7 @@ namespace C_Sharp
             string name = Console.ReadLine();
             print("Hello " + name + "!");
             print("How are you?");
-
+            
             // Create and store variable
             string a = Console.ReadLine();
 
